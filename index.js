@@ -7,7 +7,8 @@ const app = express();
 app.use(express.json());
 
 // Configuração do banco de daos
-mongoose.connect(process.env.MONGODB_URL);
+mongoose.connect(process.env.MONGODB_URL).catch((e) => console.log(e))
+const Tarefa = require("./models/tarefa");
 
 // Routes
 
